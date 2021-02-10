@@ -1,0 +1,1003 @@
+<html>
+
+<head>
+
+    <meta charset="utf-8"/>
+
+    <title>Тестовое задание</title>
+
+    <style>
+
+        body {
+
+            margin: 0px;
+
+            background-color: #212121;
+
+            user-select: none;
+
+            font-family: sans-serif;
+
+        }
+
+        .game {
+
+            position: absolute;
+
+            top: 50%;
+
+            left: 50%;
+
+            width: 980px;
+
+            height: 630px;
+
+            margin-left: -490px;
+
+            margin-top: -315px;
+
+            background-color: #149483;
+
+            background-image: url(assets/img/map.png);
+
+            background-size: cover;
+
+        }
+
+        .game > .friendsbg {
+
+            background-image: url(assets/img/fribg.png);
+
+            background-size: cover;
+
+            width: 542px;
+
+            height: 73px;
+
+            position: absolute;
+
+            bottom: 10px;
+
+            left: 5px;
+
+        }
+
+        .game > .friendsbg > .prev {
+
+            position: absolute;
+
+            left: 10px;
+
+            top: 18px;
+
+            background-image: url(assets/img/friprev.png);
+
+            background-size: cover;
+
+            width: 20px;
+
+            height: 36px;
+
+        }
+
+        .game > .friendsbg > .prev:hover {
+
+            opacity: 0.9;
+
+            cursor: pointer;
+
+        }
+
+        .game > .friendsbg > .nexts {
+
+            position: absolute;
+
+            right: 10px;
+
+            top: 18px;
+
+            background-image: url(assets/img/frinext.png);
+
+            background-size: cover;
+
+            width: 20px;
+
+            height: 36px;
+
+        }
+
+        .game > .friendsbg > .nexts:hover {
+
+            opacity: 0.9;
+
+            cursor: pointer;
+
+        }
+
+        .game > .friendsbg > .line {
+
+            width: 460px;
+
+            height: 54px;
+
+            position: absolute;
+
+            left: 40px;
+
+            top: 11px;
+
+        }
+
+        .game > .friendsbg > .line > .user {
+
+            float: left;
+
+            background-image: url(assets/img/fribung.png);
+
+            width: 56px;
+
+            height: 54px;
+
+            background-size: cover;
+
+            margin-right: 10px;
+
+        }
+
+        .game > .friendsbg > .line > .user > .icon {
+
+            background-image: url(assets/img/user.png);
+
+            position: relative;
+
+            width: 35px;
+
+            height: 42px;
+
+            left: 50%;
+
+            margin-left: -17.5px;
+
+            margin-top: 9px;
+
+        }
+
+        .game > .friendsbg > .line > .user > .plus {
+
+            background-image: url(assets/img/plus.png);
+
+            position: absolute;
+
+            width: 27px;
+
+            height: 26px;
+
+            z-index: 1;
+
+            margin-top: -5px;
+
+            margin-left: 35px;
+
+        }
+
+        .game > .chat {
+
+            background-image: url(assets/img/chat.png);
+
+            background-size: cover;
+
+            width: 66px;
+
+            height: 64px;
+
+            position: absolute;
+
+            bottom: 15px;
+
+            left: 550px;
+
+        }
+
+        .game > .chat:hover {
+
+            background-image: url(assets/img/chathover.png);
+
+            cursor: pointer;
+
+        }
+
+        .game > .next {
+
+            position: absolute;
+
+            background-image: url(assets/img/next.png);
+
+            background-size: cover;
+
+            width: 207px;
+
+            height: 73px;
+
+            bottom: 9px;
+
+            left: 620px;
+
+        }
+
+        .game > .next:hover {
+
+            opacity: 0.9;
+
+            cursor: pointer;
+
+        }
+
+        .game > .next > .text {
+
+            text-align: center;
+
+            padding-top: 20px;
+
+            font-size: 30px;
+
+            color: #fff;
+
+            font-weight: 600;
+
+        }
+
+        .game > .btn {
+
+            position: absolute;
+
+            background-image: url(assets/img/butbg.png);
+
+            background-size: cover;
+
+            width: 75px;
+
+            height: 71px;
+
+            bottom: 11.5px;
+
+            right: 80px;
+
+        }
+
+        .game > .btn > .icon {
+
+            background-image: url(assets/img/icon2.png);
+
+            background-size: cover;
+
+            width: 66px;
+
+            height: 67px;
+
+            margin-left: 5px;
+
+            margin-top: 3px;
+
+        }
+
+        .game > .btn:hover {
+
+            opacity: 0.8;
+
+            cursor: pointer;
+
+        }
+
+        .game > .btn2 {
+
+            position: absolute;
+
+            background-image: url(assets/img/butbg.png);
+
+            background-size: cover;
+
+            width: 75px;
+
+            height: 71px;
+
+            bottom: 11.5px;
+
+            right: 8px;
+
+        }
+
+        .game > .btn2 > .icon {
+
+            background-image: url(assets/img/icon1.png);
+
+            background-size: cover;
+
+            width: 73px;
+
+            height: 67px;
+
+            margin-left: 2px;
+
+            margin-top: 4px;
+
+        }
+
+        .game > .btn2:hover {
+
+            opacity: 0.8;
+
+            cursor: pointer;
+
+        }
+
+        .game > .walk {
+
+            background-image: url(assets/img/walk.png);
+
+            position: absolute;
+
+            background-size: cover;
+
+            width: 980px;
+
+            height: 630px;
+
+        }
+
+        .game > .walk > .map > .p1 {
+
+            position: absolute;
+
+            background-image: url(assets/img/walkhv.png);
+
+            width: 33px;
+
+            height: 22px;
+
+        }
+
+        .game > .walk > .map > .p1:hover {
+
+            background-image: url(assets/img/walkat.png);
+
+            cursor: pointer;
+
+        }
+
+        .game > .walk > .player {
+
+            position: absolute;
+
+            background-image: url(assets/img/player.png);
+
+            width: 24px;
+
+            height: 74px;
+
+            background-size: cover;
+
+            z-index: 1;
+
+            transform: translate3d(422px, 435px, 0);
+
+            transition: transform .3s ease-in;
+
+        }
+
+        .loader {
+
+            z-index: 1000;
+
+            position: absolute;
+
+            width: 100%;
+
+            height: 100%;
+
+            background-color: #fff;
+
+        }
+
+        .loader > .load {
+
+            display: block;
+
+            background-image: url(assets/img/load.gif);
+
+            background-size: cover;
+
+            width: 500px;
+
+            height: 375px;
+
+            position: absolute;
+
+            left: 50%;
+
+            top: 50%;
+
+            margin-left: -250px;
+
+            margin-top: -187.5px;
+
+        }
+
+        .game > .walk > .kurstart {
+
+            position: absolute;
+
+            background-image: url(assets/img/start.png);
+
+            background-size: cover;
+
+            width: 89px;
+
+            height: 68px;
+
+            top: 490px;
+
+            left: 415px;
+
+        }
+
+        .game > .walk > .kurend {
+
+            position: absolute;
+
+            background-image: url(assets/img/end.png);
+
+            background-size: cover;
+
+            width: 130px;
+
+            height: 69px;
+
+            top: 140px;
+
+            left: 840px;
+
+        }
+
+        .game > .walk > .eact {
+
+            position: absolute;
+
+            background-image: url(assets/img/eact.png);
+
+            background-size: cover;
+
+            width: 61px;
+
+            height: 74px;
+
+            top: 470px;
+
+            left: 350px;
+
+        }
+
+        .game > .modalbg {
+
+            display: none;
+
+            position: absolute;
+
+            width: 100%;
+
+            height: 100%;
+
+            opacity: 0.4;
+
+            background-color: #A69175;
+
+            z-index: 1000;
+
+        }
+
+        .game > .modal {
+
+            display: none;
+
+            position: absolute;
+
+            top: 50%;
+
+            left: 50%;
+
+            background-image: url(assets/img/modalbg.png);
+
+            background-size: cover;
+
+            width: 539px;
+
+            height: 469px;
+
+            margin-left: -269.5px;
+
+            margin-top: -234.5px;
+
+            z-index: 1001;
+
+        }
+
+        .game > .modal > .title {
+
+            position: relative;
+
+            background-image: url(assets/img/modaltitle.png);
+
+            background-size: cover;
+
+            width: 283px;
+
+            height: 46px;
+
+            left: 50%;
+
+            margin-left: -141.5px;
+
+            margin-top: -10px;
+
+        }
+
+        .game > .modal > .title > .text {
+
+            text-align: center;
+
+            color: #fff;
+
+            font-weight: 600;
+
+            font-size: 26px;
+
+            padding-top: 7px;
+
+        }
+
+        .game > .modal > .close {
+
+            position: absolute;
+
+            background-image: url(assets/img/modalclose.png);
+
+            width: 33px;
+
+            height: 35px;
+
+            top: 20px;
+
+            right: 20px;
+
+        }
+
+        .game > .modal > .close:hover {
+
+            opacity: 0.8;
+
+            cursor: pointer;
+
+        }
+
+        .game > .modal > .content {
+
+            position: absolute;
+
+            background-image: url(assets/img/modalctbg.png);
+
+            background-size: cover;
+
+            width: 475px;
+
+            height: 339px;
+
+            bottom: 30px;
+
+            left: 35px;
+
+            overflow-y: scroll;
+
+        }
+
+        .game > .modal > .content::-webkit-scrollbar {
+
+            display: none;
+
+        }
+        
+        .game > .modal > .content > .tb {
+
+            position: relative;
+
+            background-image: url(assets/img/tabletitle.png);
+
+            background-size: cover;
+
+            width: 411px;
+
+            height: 40px;
+
+            margin-left: 30px;
+
+            margin-top: 30px;
+
+        }
+
+        .game > .modal > .content > .tb > .num {
+
+            float: left;
+
+            color: #fff;
+
+            font-weight: 600;
+
+            margin-left: 20px;
+
+            margin-top: 12px;
+
+        }
+
+        .game > .modal > .content > .tb > .name {
+
+            float: left;
+
+            color: #fff;
+
+            font-weight: 600;
+
+            margin-top: 12px;
+
+            margin-left: 60px;
+
+        }
+
+        .game > .modal > .content > .tb > .spoce {
+
+            float: left;
+
+            color: #fff;
+
+            font-weight: 600;
+
+            margin-top: 12px;
+
+            margin-left: 80px;
+
+        }
+
+        .game > .modal > .content > .tb2 {
+
+            position: relative;
+
+            background-image: url(assets/img/modaluserbg.png);
+
+            background-size: cover;
+
+            width: 406px;
+
+            height: 32px;
+
+            margin-left: 33px;
+
+            margin-bottom: 10px;
+
+        }
+
+        .game > .modal > .content > .tb2 > .num {
+
+            float: left;
+
+            color: #fff;
+
+            margin-left: 20px;
+
+            margin-top: 8px;
+
+            width: 50px;
+
+            text-align: center;
+
+        }
+
+        .game > .modal > .content > .tb2 > .name {
+
+            float: left;
+
+            color: #fff;
+
+            margin-top: 8px;
+
+        }
+
+        .game > .modal > .content > .tb2 > .spoce {
+
+            float: right;
+
+            color: #fff;
+
+            margin-top: 8px;
+
+            margin-right: 40px;
+
+            width: 40px;
+
+        }
+
+        .game > .modal > .content > .tb2 > .img {
+
+            float: left;
+
+            width: 27px;
+
+            height: 27px;
+
+            margin-top: 2px;
+
+            background-size: cover;
+
+            background-image: url(assets/img/fribung.png);
+
+            margin-right: 10px;
+
+            margin-left: 20px;
+
+        }
+
+        .game > .modal > .content > .tb2 > .img  > .ims {
+
+            background-image: url(assets/img/female.png);
+
+            background-size: cover;
+
+            width: 27px;
+
+            height: 27px;
+
+        }
+
+        .game > .modal > .content > .tb2 > .img  > .ims2 {
+
+            background-image: url(assets/img/male.png);
+
+            background-size: cover;
+
+            width: 27px;
+
+            height: 27px;
+
+        }
+
+    </style>
+
+</head>
+
+<body onload="load()">
+
+    <div class="game">
+
+        <div class="modalbg" id="mdbg"></div>
+        
+        <div class="modal" id="md">
+
+            <div class="title">
+
+                <div class="text">Рейтинг игроков</div>
+
+            </div>
+
+            <div class="close" onclick="clos()"></div>
+
+            <div class="content" id="info">
+
+                <div class="tb">
+
+                    <div class="num">Место</div>
+
+                    <div class="name">Имя Фамилия</div>
+
+                    <div class="spoce">Опыт</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="loader" id="loader">
+
+            <div class="load"></div>
+
+        </div>
+
+        <div class="walk">
+
+            <div class="map" id="map"></div>
+
+            <div class="player" id="player"></div>
+
+            <div class="kurstart"></div>
+
+            <div class="kurend"></div>
+
+            <div class="eact"></div>
+
+        </div>
+
+        <div class="friendsbg">
+
+            <div class="prev"></div>
+
+            <div class="line">
+
+                <div class="user">
+
+                    <div class="plus"></div>
+
+                    <div class="icon"></div>
+
+                </div>
+
+                <div class="user">
+
+                    <div class="icon"></div>
+
+                </div>
+
+                <div class="user">
+
+                    <div class="icon"></div>
+
+                </div>
+
+                <div class="user">
+
+                    <div class="icon"></div>
+
+                </div>
+
+                <div class="user">
+
+                    <div class="icon"></div>
+
+                </div>
+
+                <div class="user">
+
+                    <div class="icon"></div>
+
+                </div>
+
+            </div>
+
+            <div class="nexts"></div>
+
+        </div>
+
+        <div class="chat"></div>
+
+        <div class="next" onclick="walkt()">
+
+            <div class="text">В УНИВЕР</div>
+
+        </div>
+
+        <div class="btn">
+
+            <div class="icon"></div>
+
+        </div>
+
+        <div class="btn2" onclick="ratings()">
+
+            <div class="icon"></div>
+
+        </div>
+        
+    </div>
+
+    <script src="assets/data/data.js"></script>
+
+    <script>
+
+        var player = {
+            x: 422,
+            y:435
+        };
+
+        //кординаты точек
+        var maps = ["490|420","458|340","500|270","524|200","500|100","435|107","373|130","335|200","270|160","215|120","185|185","232|240","193|282","145|310","100|355","28|405","65|490","150|445","210|473","293|436","335|370","398|360","415|430","460|515","490|605","510|700","460|792","410|870","372|932","300|940","280|876","315|825","345|772","342|710","285|705","245|780","180|790","168|730","210|650","250|606","292|550","275|505","215|492","170|520","130|575","70|600","20|630","50|685","125|650","72|740","125|800","95|850","155|865"];
+
+        for (var i = 0; i < maps.length; i++) {
+
+            //Передвижение девушки по нажатию на точку
+            //document.getElementById("map").innerHTML += '<div class="p1" id="pw'+i+'" onclick="walk('+i+')"></div>';
+
+            document.getElementById("map").innerHTML += '<div class="p1" id="pw'+i+'"></div>';
+
+            var point = maps[i];
+
+            var rect = point.split("|");
+
+            document.getElementById("pw"+i).setAttribute("style","top: "+rect[0]+"px;left: "+rect[1]+"px;z-index: 1;");
+
+        }
+
+        //список игроков (рейтинг)
+        for (var i = 0; i < data.rating.length; i++) {
+
+            var img = data.rating[i].img;
+
+            if(img == "./male.png") {
+
+                document.getElementById("info").innerHTML += '<div class="tb2"><div class="num">'+data.rating[i].id+'</div><div class="img"><div class="ims2"></div></div><div class="name">'+data.rating[i].name+' '+data.rating[i].lastName+'</div><div class="spoce">'+data.rating[i].points+'</div></div>';
+
+            } else {
+
+                document.getElementById("info").innerHTML += '<div class="tb2"><div class="num">'+data.rating[i].id+'</div><div class="img"><div class="ims"></div></div><div class="name">'+data.rating[i].name+' '+data.rating[i].lastName+'</div><div class="spoce">'+data.rating[i].points+'</div></div>';
+
+            }
+
+        }
+
+        function walk(id) {
+
+            var point = maps[id];
+
+            var rect = point.split("|");
+
+            player.x = rect[1];
+                
+            player.y = rect[0] - 60;
+
+            var players = document.getElementById("player");
+
+            var cssanim = "translate3d("+player.x+"px,"+player.y+"px,0)";
+
+            players.style.transform = cssanim;
+
+        }
+
+        var ids = 0;
+
+        function walkt() {
+
+            ids++;
+
+            if(ids == 53) {
+
+                ids = 0;
+
+            } else {
+
+                walk(ids);
+
+            }
+
+        }
+
+        function load() {
+
+            document.getElementById("loader").style.display = "none";
+
+        }
+
+        function clos() {
+
+            document.getElementById("mdbg").style.display = "none";
+
+            document.getElementById("md").style.display = "none";
+
+        }
+
+        function ratings() {
+
+            document.getElementById("mdbg").style.display = "block";
+
+            document.getElementById("md").style.display = "block";
+
+        }
+
+    </script>
+
+</body>
+
+</html>
